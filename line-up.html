@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&amp;family=DM+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #FFCC00; font-family: 'Archivo', sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #FFCC00; text-decoration: none; }
+  a:hover { color: #ffffff; }
+  ::selection { background: #FFCC00; color: #00A69C; }
+</style>
+</helmet>
+
+<div style="background:#FFCC00; color:#00A69C; min-height:100vh; display:flex; flex-direction:column">
+
+  <div style="position:sticky; top:0; z-index:60; background:#00A69C; border-bottom:3px solid #FFCC00; color:#FFCC00">
+    <div style="padding:0; display:flex; align-items:stretch; justify-content:space-between; gap:0; font-family:'DM Mono',monospace; font-size:clamp(10px,1.1vw,12px); letter-spacing:0.2em; text-transform:uppercase">
+      <div data-menu-wide="1" style="display:flex; align-items:stretch; flex:1">
+        <a href="index.html" style="flex:1; display:flex; align-items:center; justify-content:center; padding:15px 8px; border-right:2px solid rgba(255,204,0,0.35); color:#FFCC00; font-family:'Archivo',sans-serif; font-variation-settings:'wdth' 100,'wght' 800; font-size:clamp(13px,1.5vw,18px); letter-spacing:0.02em; transition:background .2s ease, color .2s ease" style-hover="background:#FFCC00; color:#00A69C">Start</a>
+        <span style="flex:1; display:flex; align-items:center; justify-content:center; padding:15px 8px; border-right:2px solid rgba(255,204,0,0.35); background:#FFCC00; color:#00A69C; font-family:'Archivo',sans-serif; font-variation-settings:'wdth' 100,'wght' 800; font-size:clamp(13px,1.5vw,18px); letter-spacing:0.02em; box-shadow:inset 0 -6px 0 #00A69C">Line-up</span>
+        <a href="infos.html" style="flex:1; display:flex; align-items:center; justify-content:center; padding:15px 8px; border-right:2px solid rgba(255,204,0,0.35); color:#FFCC00; font-family:'Archivo',sans-serif; font-variation-settings:'wdth' 100,'wght' 800; font-size:clamp(13px,1.5vw,18px); letter-spacing:0.02em; transition:background .2s ease, color .2s ease" style-hover="background:#FFCC00; color:#00A69C">Infos</a>
+        <a href="mitmachen.html" style="flex:1; display:flex; align-items:center; justify-content:center; padding:15px 8px; border-right:2px solid rgba(255,204,0,0.35); color:#FFCC00; font-family:'Archivo',sans-serif; font-variation-settings:'wdth' 100,'wght' 800; font-size:clamp(13px,1.5vw,18px); letter-spacing:0.02em; transition:background .2s ease, color .2s ease" style-hover="background:#FFCC00; color:#00A69C">Mitmachen</a>
+        <a href="partner.html" style="flex:1; display:flex; align-items:center; justify-content:center; padding:15px 8px; color:#FFCC00; font-family:'Archivo',sans-serif; font-variation-settings:'wdth' 100,'wght' 800; font-size:clamp(13px,1.5vw,18px); letter-spacing:0.02em; transition:background .2s ease, color .2s ease" style-hover="background:#FFCC00; color:#00A69C">Partner</a>
+      </div>
+      <button data-menu-toggle="1" onClick="{{ toggleMenu }}" style="display:none; align-items:center; gap:9px; background:none; border:none; color:#FFCC00; font-family:'DM Mono',monospace; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; padding:16px clamp(16px,3vw,40px); cursor:pointer">
+        <span style="display:flex; flex-direction:column; gap:3px"><span style="display:block; width:20px; height:2px; background:#FFCC00"></span><span style="display:block; width:20px; height:2px; background:#FFCC00"></span><span style="display:block; width:20px; height:2px; background:#FFCC00"></span></span>
+        Menü
+      </button>
+      <div style="display:flex; align-items:center; gap:9px; padding:0 clamp(14px,2.5vw,28px); border-left:2px solid rgba(255,204,0,0.35); color:#FFCC00; white-space:nowrap"><span style="font-family:'Archivo',sans-serif; font-variation-settings:'wdth' 100,'wght' 900; font-size:clamp(17px,1.9vw,24px); line-height:1; letter-spacing:-0.02em">{{ d }}</span><span style="font-size:10px; letter-spacing:0.24em">Tage</span></div>
+    </div>
+    <div data-menu-panel="1" style="display:none; border-top:2px solid rgba(255,204,0,0.35)">
+      <a href="index.html" style="display:block; padding:16px clamp(16px,3vw,40px); border-bottom:2px solid rgba(255,204,0,0.35); font-variation-settings:'wdth' 100,'wght' 800; font-size:22px; text-transform:uppercase">Start</a>
+      <a href="infos.html" style="display:block; padding:16px clamp(16px,3vw,40px); border-bottom:2px solid rgba(255,204,0,0.35); font-variation-settings:'wdth' 100,'wght' 800; font-size:22px; text-transform:uppercase">Infos</a>
+      <a href="mitmachen.html" style="display:block; padding:16px clamp(16px,3vw,40px); border-bottom:2px solid rgba(255,204,0,0.35); font-variation-settings:'wdth' 100,'wght' 800; font-size:22px; text-transform:uppercase">Mitmachen</a>
+      <a href="partner.html" style="display:block; padding:16px clamp(16px,3vw,40px); font-variation-settings:'wdth' 100,'wght' 800; font-size:22px; text-transform:uppercase">Partner</a>
+    </div>
+  </div>
+
+  <div style="flex:1">
+    <div style="padding:clamp(34px,5vw,72px) clamp(16px,3vw,40px) clamp(26px,3.4vw,48px)">
+      <div style="font-variation-settings:'wdth' 88,'wght' 900; font-size:clamp(52px,13vw,220px); line-height:0.82; letter-spacing:-0.05em; text-transform:uppercase" data-reveal="1">Line-up</div>
+    </div>
+    <div>
+      <div data-reveal="1" style="border-top:3px solid #00A69C; padding:clamp(12px,1.8vw,22px) clamp(16px,3vw,40px); display:flex; align-items:center; gap:clamp(12px,2.5vw,40px); transition:background .3s ease, color .3s ease" style-hover="background:#00A69C; color:#FFCC00">
+        <span style="font-variation-settings:'wdth' 106,'wght' 900; font-size:clamp(38px,9.5vw,150px); line-height:0.88; text-transform:uppercase; letter-spacing:-0.035em; flex:1">Sito Korell</span>
+        <span style="font-variation-settings:'wdth' 84,'wght' 700; font-size:clamp(14px,2.2vw,34px); white-space:nowrap">12 – 16</span>
+      </div>
+      <div data-reveal="1" style="border-top:3px solid #00A69C; padding:clamp(12px,1.8vw,22px) clamp(16px,3vw,40px); display:flex; align-items:center; gap:clamp(12px,2.5vw,40px); transition:background .3s ease, color .3s ease" style-hover="background:#00A69C; color:#FFCC00">
+        <span style="font-variation-settings:'wdth' 106,'wght' 900; font-size:clamp(38px,9.5vw,150px); line-height:0.88; text-transform:uppercase; letter-spacing:-0.035em; flex:1">Podnis</span>
+        <span style="font-variation-settings:'wdth' 84,'wght' 700; font-size:clamp(14px,2.2vw,34px); white-space:nowrap">16 – 18</span>
+      </div>
+      <div data-reveal="1" style="border-top:3px solid #00A69C; padding:clamp(12px,1.8vw,22px) clamp(16px,3vw,40px); display:flex; align-items:center; gap:clamp(12px,2.5vw,40px); transition:background .3s ease, color .3s ease" style-hover="background:#00A69C; color:#FFCC00">
+        <span style="font-variation-settings:'wdth' 106,'wght' 900; font-size:clamp(38px,9.5vw,150px); line-height:0.88; text-transform:uppercase; letter-spacing:-0.035em; flex:1">Hakoş</span>
+        <span style="font-variation-settings:'wdth' 84,'wght' 700; font-size:clamp(14px,2.2vw,34px); white-space:nowrap">18 – 20</span>
+      </div>
+      <div data-reveal="1" style="border-top:3px solid #00A69C; border-bottom:3px solid #00A69C; padding:clamp(12px,1.8vw,22px) clamp(16px,3vw,40px); display:flex; align-items:center; gap:clamp(12px,2.5vw,40px); transition:background .3s ease, color .3s ease" style-hover="background:#00A69C; color:#FFCC00">
+        <span style="font-variation-settings:'wdth' 106,'wght' 900; font-size:clamp(38px,9.5vw,150px); line-height:0.88; text-transform:uppercase; letter-spacing:-0.035em; flex:1">Marwie</span>
+        <span style="font-variation-settings:'wdth' 84,'wght' 700; font-size:clamp(14px,2.2vw,34px); white-space:nowrap">20 – 22</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:#00A69C; color:#FFCC00; padding:clamp(22px,3vw,36px) clamp(16px,3vw,40px); display:flex; flex-wrap:wrap; gap:14px 40px; justify-content:space-between; font-family:'DM Mono',monospace; font-size:12px; letter-spacing:0.18em; text-transform:uppercase">
+    <span>Ein Fest der Feinen Jungs</span> <a href="impressum.html" style="color:inherit">Impressum</a>
+    <a href="infos.html">Infos zum Tag →</a>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { menuOpen: false };
+  syncMenu() {
+    const root = this.el || document;
+    const wide = window.innerWidth >= 760;
+    const nav = root.querySelector('[data-menu-wide]');
+    const btn = root.querySelector('[data-menu-toggle]');
+    const panel = root.querySelector('[data-menu-panel]');
+    if (nav) nav.style.display = wide ? 'flex' : 'none';
+    if (btn) btn.style.display = wide ? 'none' : 'flex';
+    if (panel) panel.style.display = !wide && this.state.menuOpen ? 'block' : 'none';
+  }
+  componentDidUpdate() { this.syncMenu(); }
+  componentDidMount() {
+    const root = this.el || document;
+    this.syncMenu();
+    this._onResize = () => this.syncMenu();
+    window.addEventListener('resize', this._onResize);
+    const items = [...root.querySelectorAll('[data-reveal]')];
+    const show = (el) => { el.style.opacity = '1'; };
+    items.forEach((el) => {
+      el.style.transition = 'opacity .6s ease';
+      const r = el.getBoundingClientRect();
+      if (!(r.top < window.innerHeight * 0.94 && r.bottom > 0)) el.style.opacity = '0';
+    });
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((es) => es.forEach((e) => {
+        if (!e.isIntersecting) return;
+        show(e.target);
+        io.unobserve(e.target);
+      }), { threshold: 0.05, rootMargin: '0px 0px -6% 0px' });
+      items.forEach((el) => io.observe(el));
+      setTimeout(() => items.forEach(show), 2500);
+    }
+  }
+  componentWillUnmount() { window.removeEventListener('resize', this._onResize); }
+  renderVals() {
+    const d = Math.max(0, Math.floor((new Date('2026-09-19T12:00:00+02:00') - new Date()) / 86400000));
+    return { d, toggleMenu: () => this.setState((s) => ({ menuOpen: !s.menuOpen })) };
+  }
+}
+</script>
+</body>
+</html>
